@@ -17,7 +17,7 @@ export const productTableColumns: ColumnDef<Product>[] = [
     header: "Produto",
   },
   {
-    accessorKey: "prece",
+    accessorKey: "price",
     header: "Valor unitário",
   },
   {
