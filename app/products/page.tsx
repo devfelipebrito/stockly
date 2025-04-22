@@ -2,10 +2,12 @@ import { PlusIcon } from "lucide-react";
 import { Button } from "../_components/ui/button";
 import { DataTable } from "../_components/ui/data-table";
 import { productTableColumns } from "./_components/table-columns";
-import { getProducts } from "../_data-access/product/get-products";
+import { cachedGetProducts } from "../_data-access/product/get-products";
+
+export const dynamic = "force-dynamic"; // Force the page to be dynamic and not static
 
 const ProductsPage = async () => {
-  const products = await getProducts();
+  const products = await cachedGetProducts();
   return (
     <div className="m-8 w-full space-y-8 rounded-lg bg-white p-8">
       <div className="flex w-full items-center justify-between">
@@ -27,5 +29,4 @@ const ProductsPage = async () => {
     </div>
   );
 };
-
 export default ProductsPage;
